@@ -5,6 +5,7 @@ A Kronecker graph generator in Go
 
 # Example:
 
+```
 $ krongen -scale 3 -edgef 2
 1	1
 4	7
@@ -22,5 +23,6 @@ $ krongen -scale 3 -edgef 2
 5	1
 2	2
 3	1
+```
 
 where output is edge tuples (from, to)
