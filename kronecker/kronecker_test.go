@@ -3,7 +3,6 @@ package kronecker
 import (
     "testing"
     "math/rand"
-    "fmt"
 )
 
 
@@ -36,7 +35,6 @@ func TestGenerator_Yield_halts(t *testing.T) {
 
     halt := (1 << uint(scale))*edgeFactor
     gen := CreateGenerator(scale, edgeFactor)
-    fmt.Println(halt, gen.edges)
 
     i := 0
     for {
