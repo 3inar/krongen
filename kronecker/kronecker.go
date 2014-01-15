@@ -1,7 +1,6 @@
 package kronecker
 
 import (
-    "math"
     "math/rand"
 )
 
@@ -13,8 +12,9 @@ func YieldEdge(scale int, A, B, C float64) [2]int {
     c_norm := C/(1 - ab)
     a_norm := A/ab
 
-    for ib := 1; ib <= scale; ib++ {
-        coeff := int(math.Exp2(float64(ib - 1)))
+    for ib := 0; ib < scale; ib++ {
+        coeff := 1 << uint(ib)
+
         from2 := 0
         to2 := 0
 
