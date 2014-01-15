@@ -5,7 +5,7 @@ import (
     "math/rand"
 )
 
-func YieldEdge(scale int, A, B, C float64) []int {
+func YieldEdge(scale int, A, B, C float64) [2]int {
     from := 0
     to := 0
 
@@ -28,7 +28,6 @@ func YieldEdge(scale int, A, B, C float64) []int {
         from = from + coeff*from2
         to = to + coeff*to2
     }
-    edge := make([]int,2)
-    edge[0], edge[1] = from+1, to+1
-    return edge
+
+    return [2]int{from+1, to+1}
 }

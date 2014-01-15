@@ -26,7 +26,7 @@ func parallel_generator(scale, edgefactor int) {
     // initiator probabilities
     A, B, C := 0.57, 0.19, 0.19
 
-    results := make(chan []int)
+    results := make(chan [2]int)
     dudes := 0
     for i := 0; i < 100; i++ {
         dudes++
