@@ -38,13 +38,16 @@ func parallel_generator(scale, edgefactor int) {
         } ()
     }
 
+    // permutation of edge labels, the kronecker generator has a greater
+    // probability of creating edges in the lower ints
+    perm := rand.Perm(N)
     for i:=0;i<M;i++ {
         tst := <-results
 
-        // permute edge labels
-        //perm := rand.Perm(N)
-        //tst[0] = perm[tst[0] - 1]
-        //tst[1] = perm[tst[1] - 1]
+        // edges from the generator are 1-indexed,
+        // those of the permutation are 0-indexed
+        tst[0] = perm[tst[0] - 1] + 1
+        tst[1] = perm[tst[1] - 1] + 1
 
         fmt.Printf("%d\t%d\n", tst[0], tst[1])
     }
